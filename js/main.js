@@ -147,7 +147,7 @@ function jugarContarVocales() {
 
     let numeroDeVocales = contarVocales(cadenaUsuario);
 
-    alert("La oración ingresada tiene: " + numeroDeVocales + " vocales en ella, gracias por utilizar nuestra aplicación (enter para continuar");
+    alert("La oración ingresada tiene: " + numeroDeVocales + " vocales en ella, gracias por utilizar nuestra aplicación (enter para continuar)");
 
     let eleccionMenuEsParImpar = parseInt(prompt(`¿Que te gustaria hacer ahora?
         Jugar Número aleatorio: presiona 1
