@@ -1,12 +1,18 @@
 //ESCOGER JUEGO
 let eleccionDeJuego = parseInt(prompt(`Bienvenido a la primera pre entrega del proyecto! tienes dos opciones que probar:
 -- Jugar Número aleatorio: presiona 1
--- Usar la calculadora: presiona 2`));
+-- Usar la calculadora: presiona 2
+-- Verificar si un número es par o impar: 3
+-- Usar contador de vocales: 4`));
 if(eleccionDeJuego === 1){
     jugarNumeroAleatorio();
 } else if(eleccionDeJuego === 2){
     juegoCalculadora();
-};
+} else if (eleccionDeJuego === 3) {
+    esParImpar();
+} else if (eleccionDeJuego === 4) {
+    jugarContarVocales();
+}
 
 //JUEGO DE ADIVINAR EL NÚMERO
 function jugarNumeroAleatorio() {
@@ -38,11 +44,13 @@ function jugarNumeroAleatorio() {
     let eleccionMenuNumeroAleatorio = parseInt(prompt(`¿Que te gustaria hacer ahora?
     Usar la calculadora: presiona 1
     Volver a Jugar Número Aleatorio: presiona 2
-    `));
+    Verificar si un número es par o impar: 3`));
         if(eleccionMenuNumeroAleatorio === 1){
             jugarNumeroAleatorio();
         } else if(eleccionMenuNumeroAleatorio === 2){
             jugarNumeroAleatorio();
+        } else if (eleccionMenuCalculadora === 3) {
+            esParImpar();
         };
 }
 //Juego de mini calculadora
@@ -93,10 +101,66 @@ function juegoCalculadora() {
     let eleccionMenuCalculadora = parseInt(prompt(`¿Que te gustaria hacer ahora?
     Jugar Número aleatorio: presiona 1
     Volver a usar la calculadora: presiona 2
-    `));
+    Verificar si un número es par o impar: 3`));
     if(eleccionMenuCalculadora === 1){
         jugarNumeroAleatorio();
     } else if(eleccionMenuCalculadora === 2){
         juegoCalculadora();
+    } else if (eleccionMenuCalculadora === 3) {
+        esParImpar();
     };
+}
+//Es par o Impar
+function esParImpar() {
+    let numero = parseInt(prompt("Para verificar si el número es par o impar, por favor ingresa un número"));
+    if (numero % 2 === 0) {
+        alert("El número " + numero + " es par");
+    } else {
+        alert("El número " + numero + " es impar");
+    }
+    let eleccionMenuEsParImpar = parseInt(prompt(`¿Que te gustaria hacer ahora?
+    Jugar Número aleatorio: presiona 1
+    Usar la calculadora: presiona 2
+    Volver a verificar si un número es par o impar: 3`));
+    if(eleccionMenuEsParImpar === 1){
+        jugarNumeroAleatorio();
+    } else if(eleccionMenuEsParImpar === 2){
+        juegoCalculadora();
+    } else if (eleccionMenuEsParImpar === 3) {
+        esParImpar();
+    }
+}
+function jugarContarVocales() {
+
+    function contarVocales(cadena) {
+    
+        let contador = 0;
+        for (let i = 0; i < cadena.length; i++) {
+            if ('aeiouAEIOU' .includes(cadena[i])) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+    
+    let cadenaUsuario = prompt("Hola! bienvenido a nuestro contador de vocales, por favor ingrese una oración para identificar cuantas vocales hay en ella");
+
+    let numeroDeVocales = contarVocales(cadenaUsuario);
+
+    alert("La oración ingresada tiene: " + numeroDeVocales + " vocales en ella, gracias por utilizar nuestra aplicación (enter para continuar");
+
+    let eleccionMenuEsParImpar = parseInt(prompt(`¿Que te gustaria hacer ahora?
+        Jugar Número aleatorio: presiona 1
+        Usar la calculadora: presiona 2
+        Verificar si un número es par o impar: 3
+        Volver a contar vocales: 4`));
+        if(eleccionMenuContarVocal === 1){
+            jugarNumeroAleatorio();
+        } else if(eleccionMenuContarVocal === 2){
+            juegoCalculadora();
+        } else if (eleccionMenuContarVocal === 3) {
+            esParImpar();
+        } else if (eleccionMenuContarVocal === 4){
+            jugarContarVocales();
+        };
 }
