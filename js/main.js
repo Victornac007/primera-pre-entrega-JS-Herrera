@@ -111,7 +111,7 @@ function juegoCalculadora() {
         }
     }
     let resultado = calcular(num1, num2, operacion);
-    alert("El resultado es: " + num1 + operacion + num2 + " = " + resultado + " Gracias por calcular con nostros, Vuelve pronto!");
+    alert("El resultado es: " + num1 + operacion + num2 + " = " + resultado + " Gracias por calcular con nosotros, Vuelve pronto!");
 
     let eleccionMenuCalculadora = parseInt(prompt(`¿Que te gustaria hacer ahora?
     Jugar Número aleatorio: presiona 1
